@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import com.birdydex.dao.DBConnection;
+import com.birdydex.dao.proxy.DBConnectionProxy;
 
 import javax.servlet.annotation.*;
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class LoginServlet extends HttpServlet {
         try{
         	//The first line creates the database connection object, 
         	//second line creates link from database object to "Connection" 
-            DBConnection conn = new DBConnection();
+            DBConnectionProxy conn = new DBConnectionProxy();
             Connection con = conn.getConnection();
 
             // get data from login table using query

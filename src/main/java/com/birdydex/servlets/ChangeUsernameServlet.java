@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.birdydex.dao.DBConnection;
+import com.birdydex.dao.proxy.DBConnectionProxy;
 
 @WebServlet(name = "ChangeUsernameServlet", value = "/ChangeUsernameServlet")
 public class ChangeUsernameServlet extends HttpServlet {
@@ -32,8 +33,8 @@ public class ChangeUsernameServlet extends HttpServlet {
 			
 			//The first line creates the database connection object, 
 	    	//second line creates link from database object to "Connection" 
-	        DBConnection conn = new DBConnection();
-	        Connection con = conn.getConnection();
+			DBConnectionProxy conn = new DBConnectionProxy();
+            Connection con = conn.getConnection();
 	        
 	        //Grabbing session username
 	        if(req.getSession().getAttribute("userName") != null) {

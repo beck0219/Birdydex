@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/*
+ * Please use this to implement DBConnections:
+            DBConnectionProxy conn = new DBConnectionProxy();
+            Connection con = conn.getConnection();
+ */
+
 public class DBConnection {
 
 	//Static variables for the "root" user, password, and JDBC connection
@@ -19,11 +25,9 @@ public class DBConnection {
 	public Connection getConnection() {
 
         try {
-
             Class.forName(driver);
 
             try {
-
                 con = DriverManager.getConnection(connection, username, password); //Creating connection
 
             } catch (SQLException e) {

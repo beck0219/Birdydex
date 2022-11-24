@@ -1,6 +1,9 @@
 package com.birdydex.servlets;
 
-import com.birdydex.dao.DBConnection;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,10 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+
+import com.birdydex.dao.DBConnection;
+import com.birdydex.dao.proxy.DBConnectionProxy;
 
 @WebServlet(name = "DeleteAccountServlet", value = "/DeleteAccountServlet")
 public class DeleteAccountServlet extends HttpServlet {
@@ -29,8 +31,8 @@ public class DeleteAccountServlet extends HttpServlet {
 		try {
 		//The first line creates the database connection object, 
     	//second line creates link from database object to "Connection" 
-        DBConnection conn = new DBConnection();
-        Connection con = conn.getConnection();
+			DBConnectionProxy conn = new DBConnectionProxy();
+            Connection con = conn.getConnection();
         
         //Grabbing session username
         if(req.getSession().getAttribute("userName") != null) {
