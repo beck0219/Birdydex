@@ -13,7 +13,7 @@
 
 <h1>User Profile</h1>
 <br>
-<div>
+<div class="profileWrapper">
 	<h2>Welcome 
 	<%
 	if(request.getSession().getAttribute("userName") != null) {
@@ -26,7 +26,7 @@
 	</h2>
 	<p class="description">You can manage your account here.</p>
 	<br><br>
-	<div class="mainNav">
+	<div class="profileNav">
 		<ul>
 			<li><a href="changeUsername.jsp">Change Username</a></li>
 			<li><a href="">Change Password</a></li>

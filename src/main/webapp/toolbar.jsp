@@ -9,7 +9,7 @@
 <div class="mainNav">
 	<ul>
 		<li><a href="index.jsp">Home</a></li>
-		<li><a href="">Forums</a></li>
+		<li><a href="forum.jsp">Forums</a></li>
 		<li><a href="">Birdydex</a></li>
 		<li><a href="profile.jsp">Profile</a></li>
 	</ul>
