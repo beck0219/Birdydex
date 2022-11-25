@@ -1,4 +1,16 @@
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="com.birdydex.dao.DBConnection" %>
+<%@ page import="java.sql.Driver" %>
+<%@ page import="java.sql.Connection" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+
+
+
+<%--This is a PLACEHOLDER page (No current working functionality) --%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +27,19 @@
     <div class="forumHeader">
         <h1>Forum</h1>
     </div>
+
+    <form action="ForumPostServlet" method="post">
+        <label for="postTitle">Post Title:</label>
+        <input type="text" id="postTitle" name="pTitle" value=""><br>
+
+        <label for="postText">Post Text:</label>
+        <input type="text" id="postText" name="pText" value=""><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+
+
     <div class="forumBody">
         <div class="forumPost">
             <div class="forumPostImg">
