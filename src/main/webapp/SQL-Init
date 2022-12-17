@@ -1,0 +1,8 @@
+--Creates the FORUMPOST table and columns (stores post information)
+CREATE TABLE forumpost
+    (
+    postId INT AUTO-INCREMENT PRIMARY KEY,
+    postTitle VARCHAR(25),
+    postText VARCHAR(25),
+    postImg VARCHAR(25)
+    );
